@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lemon.api.runner.dao.CaseMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lemon.api.runner.pojo.Cases">
+        <id column="id" property="id" />
+        <result column="suite_id" property="suiteId" />
+        <result column="name" property="name" />
+        <result column="create_user" property="createUser" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, suite_id, name, create_user, create_time
+    </sql>
+
+	<select id="findCaseEditVO" parameterType="string" resultMap="caseEditVOMap">
+	SELECT
+		t1.id,
+		t1. name,
+		t4.method,
+		t6. HOST,
+		t4.url,
+		t3.`name` as paramName,
+		t3.type,
+		t2.api_request_param_id,
+		t2.api_request_param_value
+	FROM
+		cases t1
+	LEFT JOIN case_param_value t2 ON t1.id = t2.case_id
+	INNER JOIN api_request_param t3 ON t2.api_request_param_id = t3.id
+	INNER JOIN api t4 ON t3.api_id = t4.id
+	INNER JOIN api_classification t5 ON t4.api_classification_id = t5.id
+	INNER JOIN project t6 ON t5.project_id = t6.id
+	WHERE
+		t1.id = #{caseId};
+	</select>
+	
+	<resultMap type="caseEditVO" id="caseEditVOMap">
+		<result column="id" property="id"/>
+		<result column="name" property="caseName"/>
+		<result column="method" property="method"/>
+		<result column="host" property="host"/>
+		<result column="url" property="url"/>
+		<collection property="requestParams" ofType="ApiRequestParam">
+			<result column="paramName" property="name"/>
+			<result column="type" property="type"/>
+			<result column="api_request_param_value" property="value"/>
+			<result column="api_request_param_id" property="id"/>
+		</collection>
+	</resultMap>
+	
+	<select id="findCaseSelectedMenu" parameterType="string" resultType="FirstSecondMenuVO">
+		SELECT
+			t2. NAME AS firstLevelMenu,
+			t1. NAME AS secondLevelMenu
+		FROM
+			cases t1
+		INNER JOIN suite t2 ON t1.suite_id = t2.id
+		AND t1.id =#{caseId}
+	</select>
+</mapper>
