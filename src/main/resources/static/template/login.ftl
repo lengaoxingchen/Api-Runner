@@ -107,7 +107,7 @@
         </dd>
         <dd>
             <p>
-                还没账号？<a href="register.html" style="text-decoration: underline;"><strong>去注册</strong></a>
+                还没账号？<a href="/user/toRegister" style="text-decoration: underline;"><strong>去注册</strong></a>
             </p>
         </dd>
     </dl>

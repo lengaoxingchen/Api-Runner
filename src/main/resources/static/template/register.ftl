@@ -179,7 +179,7 @@
             <input type="button" value="立即注册" class="submit_btn"/>
         </dd>
         <dd>
-            <p>已有账号？<a href="login.html" style="text-decoration:underline;"><strong>去登录</strong></a></p>
+            <p>已有账号？<a href="/user/toLogin" style="text-decoration:underline;"><strong>去登录</strong></a></p>
         </dd>
     </dl>
 </form>
