@@ -109,7 +109,7 @@
             </div>
         </div>
         <#if selectedMenu.refer?? && selectedMenu.refer=="测试集合">
-	       	<iframe class="rightIframe f-l" name="rightIframe" src="${contextPath}/api/toApiView?apiId=2" onload="loadFrame(this);" scrolling="yes" style="height: 297px;" frameborder="0"></iframe>
+	       	<iframe class="rightIframe f-l" name="rightIframe" src="${contextPath}/api/toApiView?apiId=${selectedMenu.apiId}" onload="loadFrame(this);" scrolling="yes" style="height: 297px;" frameborder="0"></iframe>
 	       	<#else>
 	       	<iframe class="rightIframe f-l" name="rightIframe" src="${contextPath}/api/toApiList?projectId=${projectId!''}" onload="loadFrame(this);" scrolling="yes" style="height: 297px;" frameborder="0"></iframe>
         </#if>

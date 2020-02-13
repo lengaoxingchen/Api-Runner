@@ -18,7 +18,7 @@ spring:
       request-context-attribute: request
     #数据源配置
   datasource:
-      driver-class-name: com.mysql.jdbc.Driver 
+      driver-class-name: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://123.57.135.88:3306/api-runner?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
       username: root
       password: 123456

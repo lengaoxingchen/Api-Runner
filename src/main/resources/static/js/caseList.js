@@ -1,4 +1,4 @@
-//测试报告弹框导航切换
+caseEditHref//测试报告弹框导航切换
 $('body').on('click','.nav-testrep li',function(){
 	$(this).toggleClass('active').siblings().removeClass('active');
 	var index = $(this).index(); 

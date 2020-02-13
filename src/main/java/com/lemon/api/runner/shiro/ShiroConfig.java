@@ -35,8 +35,8 @@ public class ShiroConfig {
 		filterChainDefinitionMap.put("/user/register", "anon");
 		// 过滤链定义，从上向下顺序执行
 		// authc:url都必须认证通过才可以访问; anon:url都可以匿名访问
-//		filterChainDefinitionMap.put("/**", "authc");
-		filterChainDefinitionMap.put("/**", "anon");
+		filterChainDefinitionMap.put("/**", "authc");
+		//filterChainDefinitionMap.put("/**", "anon");
 		shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
 		// 如果不设置默认会自动寻找Web工程根目录下的"/login"页面
 		shiroFilterFactoryBean.setLoginUrl("/user/toLogin");
