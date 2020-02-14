@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.lemon.api.runner</groupId>
 	<artifactId>Api-Runner</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0-SNAPSHOT</version>
 	<!-- springboot 父工程的依赖 -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
