@@ -113,8 +113,7 @@
     </dl>
 </form>
 <div id="s-bottom-layer-right" class="s-bottom-layer-right" style="position:fixed; bottom:5%; left:37%">
-    <p style="color: #4b5257">Copyright ©2020 testrunner.cn All Rights Reserved | 京ICP备 20002884号
-    </p><br>
+    <p style="color: #4b5257">Copyright ©2020 testrunner.cn All Rights Reserved </p><br>
     <a style="color: #4b5257;float:left;height:20px;line-height:20px" target="_blank"
        href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802030924">
         <img src="../images/ghs.png" style="float:left;">
